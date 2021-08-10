@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ListViewChat.Chatroom"
+             Title="Sala de chat">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <ListView x:Name="listView" RowHeight="70" ItemSelected="OnItemSelected" IsPullToRefreshEnabled="True" Refreshing="LvRefreshing">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Padding="5">
+                                    <Image Source="{Binding imageM}" WidthRequest="70"/>
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding message}"/>
+                                        <Label Text="{Binding time_state}"
+                                               TextColor="Red"
+                                               FontSize="10"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                <Entry x:Name="etMessage" Placeholder="Escribir..." HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="btnSend" Text="Enviar" Clicked="btnSend_OnClicked"/>
+                <Button x:Name="btnRefresh" Text="Recargar" Clicked="btnRefresh_OnClicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

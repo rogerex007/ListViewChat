@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ListViewChat.Member"
+             Title="Amigos">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout Margin="5" Orientation="Horizontal">
+                <Entry Placeholder="Buscar usuario..." x:Name="etSearchUser" HorizontalOptions="FillAndExpand"/>
+                <Button Text="Buscar" x:Name="btnSearch" BackgroundColor="#4da802" Clicked="btnSearch_Onclicked"/>
+                <Button Text="Solicitud" x:Name="btnRF" BackgroundColor="#4da802" Clicked="btnRF_Onclicked"/>
+            </StackLayout>
+            <StackLayout>
+                <ListView x:Name="listView" RowHeight="70" ItemSelected="OnItemSelected" IsPullToRefreshEnabled="True" Refreshing="LvRefreshing">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Padding="5">
+                                    <Image Source="{Binding imageFr}" WidthRequest="70"/>
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding name}" FontSize="Large"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                <Button x:Name="btnRefresh" Text="Recargar" Clicked="btnRE_OnClicked" HorizontalOptions="EndAndExpand"/>
+                <Button x:Name="btnLogout" Text="Cerrar sesion" Clicked="btnLO_OnClicked" HorizontalOptions="StartAndExpand"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

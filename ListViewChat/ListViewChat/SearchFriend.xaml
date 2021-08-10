@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ListViewChat.SearchFriend"
+             Title="Buscar">
+    <StackLayout>
+
+        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Image x:Name="imgPic" Source="" WidthRequest="200" HeightRequest="200"/>
+            </StackLayout>
+
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Label Text="Example" Margin="0,10" HorizontalOptions="CenterAndExpand" x:Name="lbuser"/>
+                <Button Text="Agregar" x:Name="btnAdd" BackgroundColor="#4da802" Margin="10,0" Clicked="btnAdd_Onclicked"/>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

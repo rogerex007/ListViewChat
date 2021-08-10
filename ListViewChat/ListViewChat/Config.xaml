@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ListViewChat.Config">
+    <StackLayout Padding="10" VerticalOptions="CenterAndExpand">
+        <StackLayout Padding="25">
+            <Entry x:Name="etIP" Placeholder="Ejemplo: 192.168.0.5:3000" Margin="0,10"/>
+        </StackLayout>
+
+        <StackLayout Padding="75,0">
+            <Button x:Name="btnSetIp"
+                    BackgroundColor="#0275a8"
+                    Clicked="btnSetIp_Onclicked"
+                    StyleClass="Circle"
+                    Text="SetIp"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

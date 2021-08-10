@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ListViewChat.ShowRequestFriend"
+             Title="Solicitudes de amistad">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout>
+                <ListView x:Name="listView" RowHeight="70" ItemSelected="OnItemSelected" ItemTapped="OnTap" IsPullToRefreshEnabled="True" 
+                          Refreshing="LvRefreshing">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Clicked="OnAccept" CommandParameter="{Binding RequestID}"
+                                              Text="Aceptar"/>
+                                    <MenuItem Clicked="OnDeAccept" CommandParameter="{Binding RequestID}"
+                                              Text="Eliminar" IsDestructive="True"/>
+                                </ViewCell.ContextActions>
+                                <StackLayout Orientation="Horizontal" Padding="5">
+                                    <Image Source="{Binding imageR}" WidthRequest="70"/>
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding name}"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
